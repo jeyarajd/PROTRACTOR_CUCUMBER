@@ -17,5 +17,6 @@ Given(/^I am on the home page$/, async () => {
 When(/^I do nothing$/, () => {});
 
 Then(/^I should see the title$/, async () => {
-  expect(await browser.getTitle()).to.equal('Google');
+  expect(await browser.getTitle()).to.equal('Google1');
+
 });
