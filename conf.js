@@ -17,17 +17,16 @@ exports.config = {
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    require: ['./Steps/apps.steps.ts'],
+    require: ['./Steps/*.ts', './common/*.ts'],
     format: 'json:report/result.json'
   },
-
+  baseUrl: "https://www.google.com",
   onPrepare() {
  
 
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.json')
     });
-    require: ['./common/chaiAssertions.ts', './common/hooks.ts'],
     browser.ignoreSynchronization = true;
     browser.manage().window().maximize();
     SELENIUM_PROMISE_MANAGER: false

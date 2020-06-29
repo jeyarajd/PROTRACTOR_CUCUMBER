@@ -1,13 +1,26 @@
 import { browser } from 'protractor';
-import {  After } from 'cucumber';
+const { Before,BeforeAll, After, AfterAll, Status } = require("cucumber");
+import * as fs from "fs";
+import { config } from "../conf";
+import {setDefaultTimeout} from 'cucumber';
 
-module.exports = function(){ After(function (scenario) {
-    if (scenario.result.status === "failed") {
-      const World = this;
-  
-      return browser.takeScreenshot().then(function (buffer) {
-        return World.attach(buffer, 'image/png');
-      });
-    }});
+BeforeAll({ timeout: 100 * 1000 }, () => {
+    setDefaultTimeout(100 * 1000);
+  });
 
-}
+
+Before({timeout: 100 * 1000}, async () => {
+    await browser.get(config.baseUrl);
+});
+
+After(async function(scenario) {
+    if (scenario.result.status === Status.FAILED) {
+        // screenShot is a base-64 encoded PNG
+         const screenShot = await browser.takeScreenshot();
+         this.attach(screenShot, "image/png");
+    }
+});
+
+AfterAll({timeout: 100 * 1000}, async () => {
+    await browser.quit();
+});
