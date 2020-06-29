@@ -2,6 +2,8 @@ import { Before, After, Given, Then, When } from 'cucumber';
 import { browser, protractor } from "protractor";
 import { SearchPageObject } from "../pages/searchPage";
 import {ExcelReader} from '../Helper/ExcelReader';
+import * as Collections from 'typescript-collections';
+
 const { Readable } = require("stream")
 import { stream } from 'exceljs';
 const chai = require("chai").use(require("chai-as-promised"));
@@ -34,13 +36,29 @@ Given(/^I am on search page$/, async () => {
 
 When(/^I type "(.*?)"$/,async function(maxWaitTime,text){
 
-    var data = text.rowsHash();
-    await excelRead.exl(data.searchkeyword).then(async function(objct){
-      console.log(objct);
-        await objct.forEach( async  function (value) {   
-        await search.searchTextBox.sendKeys(value).then (async function(){
-        await search.searchTextBox.clear();
-       });
-   });
-  });
+     var data = text.rowsHash();
+     console.log("Path: " + data.searchkeyword);
+     console.log("Row: " + data.TC_ID);
+     console.log("ToFindData: "+ data.FindData)
+     excelRead.exl(data.searchkeyword).then((value) => {
+      console.log("ExcelData: "+value.toString())
+       value.forEach((row) => {
+         
+         if(row.getValue("TC_ID") === data.TC_ID)
+         {
+            console.log(row.getValue(data.FindData));
+            
+         }
+
+       })
+     }
+     )
+    //await excelRead.exl(data.searchkeyword).then(async function(objct){
+    //   console.log(objct);
+    //     await objct.forEach( async  function (value) {   
+    //     await search.searchTextBox.sendKeys(value).then (async function(){
+    //      await search.searchTextBox.clear();
+    //     });
+    // });
+   //});
 });
