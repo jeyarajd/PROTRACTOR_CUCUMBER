@@ -37,10 +37,10 @@ Given(/^I am on search page$/, async () => {
 When(/^I type "(.*?)"$/,async function(maxWaitTime,text){
 
      var data = text.rowsHash();
-     console.log("Path: " + data.searchkeyword);
+     console.log("Path: " + data.path);
      console.log("Row: " + data.TC_ID);
      console.log("ToFindData: "+ data.FindData)
-     excelRead.exl(data.searchkeyword).then((value) => {
+     excelRead.exl(data.path).then((value) => {
       console.log("ExcelData: "+value.toString())
        value.forEach((row) => {
          

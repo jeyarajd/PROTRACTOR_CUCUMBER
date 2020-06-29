@@ -9,7 +9,7 @@ Feature: Go to the home
 Scenario: Searching on google
   Given I am on search page
   When I type "searchkeyword"
-    | searchkeyword | ./TestData/SearchData.xlsx |
+    | path | ./TestData/SearchData.xlsx |
     |TC_ID| TC_001|
     | FindData | FirstName |
 
