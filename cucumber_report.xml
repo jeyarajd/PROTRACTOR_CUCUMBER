@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="go-to-the-home;searching-on-google" tests="2" failures="0" skipped="0">
+        <properties>
+            <property name="@fappy" value="true">
+            </property>
+            <property name="@smoke" value="true">
+            </property>
+            <property name="URI" value="features\app.feature">
+            </property>
+        </properties>
+        <testcase name="Given I am on search page" classname="go-to-the-home;searching-on-google" time="1.6e-8">
+        </testcase>
+        <testcase name="When I type &quot;searchkeyword&quot;" classname="go-to-the-home;searching-on-google" time="4e-9">
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;first-smoke-scenario" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@smoke" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print first smoke scenario" classname="tag-test;first-smoke-scenario" time="1e-9">
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;second-smoke-scenario" tests="1" failures="0" skipped="1">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@smoke" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print Second smoke scenario" classname="tag-test;second-smoke-scenario">
+            <skipped message="">
+            </skipped>
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;third-smoke-scenario" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@smoke" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print Third smoke scenario" classname="tag-test;third-smoke-scenario" time="1e-9">
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;first-regression-scenario" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@regression" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print first Regression scenario" classname="tag-test;first-regression-scenario">
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;second-regression-scenario" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@regression" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print second Regression scenario" classname="tag-test;second-regression-scenario" time="4e-9">
+        </testcase>
+    </testsuite>
+    <testsuite name="tag-test;third-regression-scenario" tests="1" failures="0" skipped="0">
+        <properties>
+            <property name="@unfappy" value="true">
+            </property>
+            <property name="@regression" value="true">
+            </property>
+            <property name="URI" value="features\tag1.feature">
+            </property>
+        </properties>
+        <testcase name="Given Print Third Regression scenario" classname="tag-test;third-regression-scenario" time="1e-9">
+        </testcase>
+    </testsuite>
+</testsuites>

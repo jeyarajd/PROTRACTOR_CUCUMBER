@@ -1,22 +1,20 @@
 import { Before, After, Given, Then, When } from 'cucumber';
 import { browser, protractor } from "protractor";
-import { SearchPageObject } from "../pages/searchPage";
 import {ExcelReader} from '../Helper/ExcelReader';
-import * as Collections from 'typescript-collections';
 
 const { Readable } = require("stream")
 import { stream } from 'exceljs';
 const chai = require("chai").use(require("chai-as-promised"));
 const expect = chai.expect;
 const excelRead : ExcelReader = new ExcelReader();
-const search: SearchPageObject = new SearchPageObject();
 
-After(async function(scenario) {
-  if (scenario.result.status === 'failed') {
-          const screenShot = await browser.takeScreenshot();
-          this.attach(screenShot, "image/png");
-  }
-});
+
+// After(async function(scenario) {
+//   if (scenario.result.status === 'failed') {
+//           const screenShot = await browser.takeScreenshot();
+//           this.attach(screenShot, "image/png");
+//   }
+// });
 Given(/^I am on the home page$/, async () => {
   await browser.get("https://www.google.com/").then(() => 
   console.info('Redirected to homepage'));

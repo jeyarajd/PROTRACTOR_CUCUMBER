@@ -1,3 +1,4 @@
+@fappy
 Feature: Go to the home
   Display the title
 
@@ -5,7 +6,7 @@ Feature: Go to the home
 #     Given I am on the home page
 #     When I do nothing
 #     Then I should see the title
-
+@smoke
 Scenario: Searching on google
   Given I am on search page
   When I type "searchkeyword"
