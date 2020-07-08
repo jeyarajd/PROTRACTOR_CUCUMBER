@@ -1,16 +1,19 @@
-@fappy
-Feature: Go to the home
-  Display the title
 
-# Scenario: Home Page
-#     Given I am on the home page
-#     When I do nothing
-#     Then I should see the title
-@smoke
-Scenario: Searching on google
-  Given I am on search page
-  When I type "searchkeyword"
-    | path | ./TestData/SearchData.xlsx |
-    |TC_ID| TC_001|
-    | FindData | FirstName |
+Feature: Go to the home
+@Regression
+Scenario Outline: Auth Agent Request
+        Given I am on "<Brand>" page
+        When Enter "<FirstName>" 
+    
+    Examples: 
+    TestData/SearchData.csv
+@Regression
+Scenario Outline: Non Account Agent Request
+        Given I am on "<Brand>" page
+        When Enter "<FirstName>" 
+    
+    Examples: 
+    TestData/SearchData.csv
+
+
 
