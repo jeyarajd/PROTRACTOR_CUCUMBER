@@ -10,11 +10,9 @@ const excelRead : ExcelReader = new ExcelReader();
 
 
 Given(/^I am on "(.*?)" page$/, async (brand : string) => {
-  //expect(await browser.getTitle()).to.equal('Google');
  console.log(brand);
 });
 
 When(/^Enter "(.*?)"$/,async function(firstName : string){
-console.log(firstName);
-   
+console.log(firstName); // return 
 });
